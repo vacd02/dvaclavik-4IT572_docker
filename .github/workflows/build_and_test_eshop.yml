@@ -51,7 +51,7 @@ jobs:
           path: node_modules
           key: node_modules-${{ hashFiles('**/package-lock.json') }}
 
-      - name: Update Browserslist
+      - name: Update Browsers list
         run: npx browserslist@latest --update-db
 
       - name: Build
