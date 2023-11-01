@@ -58,5 +58,33 @@ jobs:
           npm rebuild node-sass --force
           npm run build -- --colors
 
+    Test:
+      needs: Install
+      runs-on: ubuntu-latest
+
+      steps:
+      - name: Code checkout
+        uses: actions/checkout@v4.1.1
+        with:
+          token: ${{ secrets.WORKFLOW_TOKEN }}
+
+      - name: Setup NodeJS
+        uses: actions/setup-node@v4.0.0
+        with:
+          node-version: 14
+
+      - name: Cache node modules
+        uses: actions/cache@v3.3.2
+        with:
+          path: node_modules
+          key: node_modules-${{ hashFiles('**/package-lock.json') }}
+
+      - name: Update Browserslist
+        run: npx browserslist@latest --update-db
+
+      - name: Run tests
+        run: |
+          npm run test -- --colors
+
 
 
