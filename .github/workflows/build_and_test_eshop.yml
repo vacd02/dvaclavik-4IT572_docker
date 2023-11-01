@@ -80,9 +80,6 @@ jobs:
         path: node_modules
         key: node_modules-${{ hashFiles('**/package-lock.json') }}
 
-    - name: Update Browserslist
-      run: npx browserslist@latest --update-db
-
     - name: Run tests
       run: |
         npm run test -- --colors
