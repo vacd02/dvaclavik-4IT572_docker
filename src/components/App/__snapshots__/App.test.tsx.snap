@@ -43,8 +43,6 @@ Object {
             />
           </svg>
         </a>
-          </div>
-        </div>
         <main
           class="App__TwoColumnGrid-sc-ebmerl-1 hularM"
         >
@@ -269,8 +267,6 @@ Object {
           />
         </svg>
       </a>
-        </div>
-      </div>
       <main
         class="App__TwoColumnGrid-sc-ebmerl-1 hularM"
       >
